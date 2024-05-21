@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/img/logo.jpg";
 
 export default function NavBar() {
   const [activeLink, setActiveLink] = useState("Home");
@@ -48,8 +47,9 @@ export default function NavBar() {
       }
     >
       <div className="flex items-center space-x-4">
-        <img src={logo} alt="logo" className="h-12 w-12 rounded-full" />
-        <h1 className="text-3xl font-semibold text-gray-600">My Portfolio</h1>
+        <h1 className="text-3xl font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:animate-bounce">
+          Thomas Duarte
+        </h1>
       </div>
       <div className="flex space-x-4">
         {/* Github */}
