@@ -23,14 +23,16 @@ export default function Skills() {
 
   return (
     <section className="pb-12 relative">
-      <div className="container mx-auto bg-black rounded-3xl">
+      <div className="container mx-auto bg-gray-900 rounded-3xl">
         <h1 className="text-4xl font-bold text-center text-indigo-600 p-5 rounded shadow-lg mx-10 -mt-10">
           Skills
         </h1>
-        <div className="p-5 rounded shadow-lg mx-10 mb-5">
+        <div className="p-5 rounded shadow-lg mx-10">
           <Carousel
             responsive={responsive}
             infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={3000}
             className="relative rounded shadow-lg"
           >
             <div className="bg-gray-100 p-5 rounded shadow-lg mx-10 mb-5">
@@ -128,7 +130,7 @@ export default function Skills() {
                 <li>Scrum</li>
                 <li>Pair-programming</li>
                 <li>Testing</li>
-                <li>Estimation</li>
+                <li>Estimations</li>
               </ul>
             </div>
           </Carousel>
