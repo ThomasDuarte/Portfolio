@@ -66,9 +66,12 @@ export default function Projects() {
   };
 
   return (
-    <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white pb-12 relative">
+    <section
+      className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white pb-12 relative"
+      id="projects"
+    >
       <div className="container mx-auto">
-        <h1 className="bg-gradient-to-r from-purple-500 to-pink-500 text-4xl font-bold text-center text-white p-5 rounded shadow-lg mx-10 mb-5">
+        <h1 className="bg-gradient-to-r from-purple-500 to-pink-500 text-4xl font-bold text-center text-white p-5 rounded-xl shadow-lg mx-10 mb-5">
           Projects
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
@@ -85,7 +88,7 @@ export default function Projects() {
               >
                 <div className="flex justify-center items-center flex-col">
                   <img
-                    className="w-64 h-64 object-contain object-center rounded-lg"
+                    className="w-64 h-64 object-cover object-center rounded-lg"
                     src={project.image}
                     alt={project.title}
                   />

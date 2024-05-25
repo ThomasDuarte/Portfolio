@@ -61,21 +61,21 @@ export default function Skills() {
   ];
 
   return (
-    <section className="pb-12 relative">
-      <div className="container mx-auto bg-gray-900 rounded-3xl pb-5">
-        <h1 className="text-4xl font-bold text-center text-blue-500 p-5 rounded shadow-lg mx-10 -mt-10">
+    <section className="pb-12 relative" id="skills">
+      <div className="container mx-auto bg-[mediumpurple] rounded-3xl pb-5">
+        <h1 className="text-4xl font-bold text-center text-white p-5 mx-10 -mt-10">
           Skills
         </h1>
-        <div className="p-5 rounded shadow-lg mx-10 bg-white">
+        <div className="p-5 rounded-xl shadow-lg mx-10 bg-white">
           <Carousel
             responsive={responsive}
             infinite={true}
             autoPlay={true}
             autoPlaySpeed={2000}
-            className="relative rounded shadow-lg"
+            className="relative"
           >
             {skills.map((skill) => (
-              <div className="bg-blue-100 p-5 rounded shadow-lg mx-10 mb-5">
+              <div className="bg-blue-100 p-5 rounded-lg shadow-lg mx-10 h-full">
                 <h1 className="text-4xl font-bold text-center text-indigo-600">
                   <img
                     className="w-20 h-20 mx-auto mb-2"

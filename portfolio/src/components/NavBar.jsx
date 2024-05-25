@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import ScrollLink from "./ScrollLink";
 
 export default function NavBar() {
-  const [activeLink, setActiveLink] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,9 +16,6 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
-  };
   const SocialIcon = ({ href, classIcon, viewBox, svgPath }) => (
     <a
       href={href}
@@ -33,10 +30,10 @@ export default function NavBar() {
     </a>
   );
   const navLinks = [
-    { name: "home", text: "Home" },
-    { name: "skills", text: "Skills" },
-    { name: "projects", text: "Projects" },
-    { name: "contact", text: "Contact" },
+    { name: "home", text: "Home", href: "home" },
+    { name: "skills", text: "Skills", href: "skills" },
+    { name: "projects", text: "Projects", href: "projects" },
+    { name: "contact", text: "Contact", href: "contact" },
   ];
   return (
     <nav
@@ -94,15 +91,12 @@ export default function NavBar() {
           {navLinks.map((link) => (
             <li
               key={link.name}
-              className="transform transition-transform duration-500 hover:scale-125 text-lg font-semibold text-gray-500 hover:text-gray-900"
+              className="transform transition-transform duration-500 hover:scale-125 text-lg font-semibold text-black hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
             >
-              <a
-                href="#"
-                className={activeLink === link.name ? "active " : ""}
-                onClick={() => onUpdateActiveLink(link.name)}
-              >
+              <ScrollLink to={link.href} offset={-60}>
                 {link.text}
-              </a>
+              </ScrollLink>
+              {/* Ajustez l'offset selon la hauteur de votre navbar */}
             </li>
           ))}
         </ul>
