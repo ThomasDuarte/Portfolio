@@ -1,5 +1,11 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import bddIcon from "../assets/img/bdd.png";
+import crmIcon from "../assets/img/crm.png";
+import htmlIcon from "../assets/img/html.png";
+import jsIcon from "../assets/img/js.png";
+import otherIcon from "../assets/img/other.png";
+import toolsIcon from "../assets/img/tools.png";
 
 export default function Skills() {
   const responsive = {
@@ -21,118 +27,70 @@ export default function Skills() {
     },
   };
 
+  const skills = [
+    {
+      icon: htmlIcon,
+      name: "Frontend",
+      items: ["HTML", "CSS", "JavaScript", "React"],
+    },
+    {
+      icon: jsIcon,
+      name: "Backend",
+      items: ["JavaScipt", "C#", "Java", "Node"],
+    },
+    {
+      icon: bddIcon,
+      name: "Database",
+      items: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
+    },
+    {
+      icon: toolsIcon,
+      name: "Tools",
+      items: ["Git", "GitHub", "VS Code", "Postman", "XrmToolBox"],
+    },
+    {
+      icon: crmIcon,
+      name: "CRM",
+      items: ["Microsoft Dynamics 365", "Salesforce", "Efficy"],
+    },
+    {
+      icon: otherIcon,
+      name: "Others",
+      items: ["Agile", "Scrum", "Pair-programming", "Testing", "Estimations"],
+    },
+  ];
+
   return (
     <section className="pb-12 relative">
-      <div className="container mx-auto bg-gray-900 rounded-3xl">
-        <h1 className="text-4xl font-bold text-center text-indigo-600 p-5 rounded shadow-lg mx-10 -mt-10">
+      <div className="container mx-auto bg-gray-900 rounded-3xl pb-5">
+        <h1 className="text-4xl font-bold text-center text-blue-500 p-5 rounded shadow-lg mx-10 -mt-10">
           Skills
         </h1>
-        <div className="p-5 rounded shadow-lg mx-10">
+        <div className="p-5 rounded shadow-lg mx-10 bg-white">
           <Carousel
             responsive={responsive}
             infinite={true}
             autoPlay={true}
-            autoPlaySpeed={3000}
+            autoPlaySpeed={2000}
             className="relative rounded shadow-lg"
           >
-            <div className="bg-gray-100 p-5 rounded shadow-lg mx-10 mb-5">
-              <h1 className="text-4xl font-bold text-center text-indigo-600">
-                <img
-                  className="w-20 h-20 mx-auto"
-                  src="https://img.icons8.com/color/48/000000/html-5--v1.png"
-                  alt="html"
-                />
-                Frontend
-              </h1>
-              <ul className="text-lg text-center mt-4 mx-10">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Vue</li>
-              </ul>
-            </div>
-            <div className="bg-gray-100 p-5 rounded shadow-lg mx-10 mb-5">
-              <img
-                className="w-20 h-20 mx-auto"
-                src="https://img.icons8.com/color/48/000000/javascript--v1.png"
-                alt="html"
-              />
-              <h1 className="text-4xl font-bold text-center text-indigo-600">
-                Backend
-              </h1>
-              <ul className="text-lg text-center mt-4 mx-10">
-                <li>JavaScipt</li>
-                <li>C#</li>
-                <li>Java</li>
-                <li>Node</li>
-              </ul>
-            </div>
-            <div className="bg-gray-100 p-5 rounded shadow-lg mx-10 mb-5">
-              <img
-                className="w-20 h-20 mx-auto"
-                src="https://img.icons8.com/color/48/000000/database-restore.png"
-                alt="html"
-              />
-              <h1 className="text-4xl font-bold text-center text-indigo-600">
-                Database
-              </h1>
-              <ul className="text-lg text-center mt-4 mx-10">
-                <li>MySQL</li>
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
-                <li>SQLite</li>
-              </ul>
-            </div>
-            <div className="bg-gray-100 p-5 rounded shadow-lg mx-10 mb-5">
-              <img
-                className="w-20 h-20 mx-auto"
-                src="https://img.icons8.com/color/48/000000/monitor.png"
-                alt="html"
-              />
-              <h1 className="text-4xl font-bold text-center text-indigo-600">
-                Tools
-              </h1>
-              <ul className="text-lg text-center mt-4 mx-10">
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>VS Code</li>
-                <li>Postman</li>
-                <li>XrmToolBox</li>
-              </ul>
-            </div>
-            <div className="bg-gray-100 p-5 rounded shadow-lg mx-10 mb-5">
-              <img
-                className="w-20 h-20 mx-auto"
-                src="https://img.icons8.com/color/48/000000/monitor.png"
-                alt="html"
-              />
-              <h1 className="text-4xl font-bold text-center text-indigo-600">
-                CRM
-              </h1>
-              <ul className="text-lg text-center mt-4 mx-10">
-                <li>Microsoft Dynamics 365</li>
-                <li>Salesforce</li>
-                <li>Efficy</li>
-              </ul>
-            </div>
-            <div className="bg-gray-100 p-5 rounded shadow-lg mx-10 mb-5">
-              <img
-                className="w-20 h-20 mx-auto"
-                src="https://img.icons8.com/color/48/000000/monitor.png"
-                alt="html"
-              />
-              <h1 className="text-4xl font-bold text-center text-indigo-600">
-                Others
-              </h1>
-              <ul className="text-lg text-center mt-4 mx-10">
-                <li>Agile</li>
-                <li>Scrum</li>
-                <li>Pair-programming</li>
-                <li>Testing</li>
-                <li>Estimations</li>
-              </ul>
-            </div>
+            {skills.map((skill) => (
+              <div className="bg-blue-100 p-5 rounded shadow-lg mx-10 mb-5">
+                <h1 className="text-4xl font-bold text-center text-indigo-600">
+                  <img
+                    className="w-20 h-20 mx-auto mb-2"
+                    src={skill.icon}
+                    alt={skill.name}
+                  />
+                  {skill.name}
+                </h1>
+                <ul className="text-lg text-center mt-2 mx-10">
+                  {skill.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </Carousel>
         </div>
       </div>

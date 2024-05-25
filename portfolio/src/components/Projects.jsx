@@ -1,5 +1,9 @@
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
+import carLightsWebsite from "../assets/img/carLightsWebsite.png";
+import perlinNoise from "../assets/img/perlinNoise.png";
+import tipsHaler from "../assets/img/tipsHaler.jpeg";
+import tree6clope from "../assets/img/tree6clope.jpeg";
 
 export default function Projects() {
   const responsive = {
@@ -22,53 +26,32 @@ export default function Projects() {
   };
   const projects = [
     {
-      title: "Project 1",
+      title: "Perlin noise project",
       description:
-        "This project is a project 1. It is a project that is a project and it is a project. It's also a project that is a project.",
-      image: "https://via.placeholder.com/150",
-      url: "https://www.google.com",
+        "During my Master 1 in computer science, I had to create a project using Perlin noise. This project was in team of 3 peolple. We created a 2D map generator using Perlin noise. We used Javascript to create the project. We also used a little bit of HTML and CSS to create the website. Therz was a second Perlin noise created in Go to compare the two Perlin noise.",
+      image: perlinNoise,
+      url: "https://github.com/ThomasDuarte/Perlin-Noise",
     },
     {
-      title: "Project 2",
-      description: "This is a project 2",
-      image: "https://via.placeholder.com/150",
-      url: "https://www.google.com",
+      title: "Car dashboard lights website",
+      description:
+        "This was a personnal project. In order to learn React, I created a website about car dashboard lights. I also used a little bit of HTML and TailwindCSS to create the website. The website is composed of a home page with a navBar and a page for each dashboard light. I used a JSON file to store the data of the dashboard lights.",
+      image: carLightsWebsite,
+      url: "https://github.com/ThomasDuarte/React_ServerBar",
     },
     {
-      title: "Project 3",
-      description: "This is a project",
-      image: "https://via.placeholder.com/150",
-      url: "https://www.google.com",
+      title: "Academic project : Tips Haler",
+      description:
+        "During my BTS SNIR, I create a system to help people with asthma. The system is composed of a Raspberry Pi, a pressure sensor and some PVC parts. The Raspberry Pi is connected to a website where the user can see the data collected by the sensors. The user can also set up alerts if the data collected is too high. I worked with a team of 4 people to create the system and I was in charge of creating the website and the connection between the website and the Raspberry Pi.",
+      image: tipsHaler,
+      url: "https://optimhal.com/chambre-dinhalation-tips-haler/",
     },
     {
-      title: "Project 4",
-      description: "This is a project",
-      image: "https://via.placeholder.com/150",
-      url: "https://www.google.com",
-    },
-    {
-      title: "Project 5",
-      description: "This is a project",
-      image: "https://via.placeholder.com/150",
-      url: "https://www.google.com",
-    },
-    {
-      title: "Project 6",
-      description: "This is a project",
-      image: "https://via.placeholder.com/150",
-      url: "https://www.google.com",
-    },
-    {
-      title: "Project 7",
-      description: "This is a project",
-      image: "https://via.placeholder.com/150",
-      url: "https://www.google.com",
-    },
-    {
-      title: "Project 8",
-      description: "This is a project",
-      image: "https://via.placeholder.com/150",
-      url: "https://www.google.com",
+      title: "Tree6clope",
+      description:
+        "During my year of work-study, I had to contribute to the development of the Tree6clope project. I was in charge of the detection of each cigarette butt thrown inside the Tree6clope. I used a Raspberry Pi and a infrared sensors to detect the cigarette butts. I also used a programm in C to count the number of cigarette butts. There was also a part of the project where I had to create a website to display the number of cigarette butts detected.",
+      image: tree6clope,
+      url: "https://www.tree6clope.com/",
     },
   ];
   const [isFlipped, setIsFlipped] = useState(
@@ -100,15 +83,28 @@ export default function Projects() {
                 isFlipped={isFlipped[index]}
                 flipDirection="horizontal"
               >
-                <div className="flex justify-center flex-col">
-                  <img src={project.image} alt={project.title} />
-                  <div className="legend">
+                <div className="flex justify-center items-center flex-col">
+                  <img
+                    className="w-64 h-64 object-contain object-center rounded-lg"
+                    src={project.image}
+                    alt={project.title}
+                  />
+                  <div className="text-lg font-bold mt-2">
                     <h2>{project.title}</h2>
                   </div>
                 </div>
                 <div>
-                  <p>{project.description}</p>
-                  <a href={project.url}>Learn More</a>
+                  <p className="text-lg text-justify mb-4">
+                    {project.description}
+                  </p>
+                  {project.url !== "" && (
+                    <a
+                      className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-500"
+                      href={project.url}
+                    >
+                      Learn More
+                    </a>
+                  )}
                 </div>
               </ReactCardFlip>
             </div>
