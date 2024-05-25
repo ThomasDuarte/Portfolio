@@ -48,7 +48,7 @@ export default function Banner() {
   };
 
   return (
-    <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-20 flex flex-row items-center">
+    <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-20 flex items-center">
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold text-center text-indigo-600 bg-white p-5 rounded shadow-lg mx-10 mb-5">
           Welcome to my portfolio

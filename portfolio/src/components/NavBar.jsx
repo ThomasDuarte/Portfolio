@@ -42,7 +42,7 @@ export default function NavBar() {
     <nav
       className={
         scrolled
-          ? "scrolled"
+          ? "flex justify-between items-center py-2 px-8 bg-white shadow-sm fixed top-0 left-0 right-0 z-50 transition duration-500 ease-in-out"
           : "flex justify-between items-center py-4 px-8 bg-white shadow-sm"
       }
     >
