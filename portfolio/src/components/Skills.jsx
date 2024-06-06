@@ -61,9 +61,9 @@ export default function Skills() {
   ];
 
   return (
-    <section className="pb-12 relative" id="skills">
+    <section className="pb-5 sm:pb-12 relative" id="skills">
       <div className="container mx-auto bg-[mediumpurple] rounded-3xl pb-5">
-        <h1 className="text-4xl font-bold text-center text-white p-5 mx-10 -mt-10">
+        <h1 className="text-4xl font-bold text-center text-white p-5 mx-10 -mt-5 sm:-mt-10">
           Skills
         </h1>
         <div className="p-5 rounded-xl shadow-lg mx-10 bg-white">

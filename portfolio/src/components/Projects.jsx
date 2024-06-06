@@ -67,7 +67,7 @@ export default function Projects() {
 
   return (
     <section
-      className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white pb-12 relative"
+      className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white pb-5 sm:pb-12 relative"
       id="projects"
     >
       <div className="container mx-auto">
@@ -87,9 +87,9 @@ export default function Projects() {
                 isFlipped={isFlipped[index]}
                 flipDirection="horizontal"
               >
-                <div className="flex justify-center items-center flex-col">
+                <div className="flex justify-center items-center flex-col mb-3 sm:mb-auto">
                   <img
-                    className="w-64 h-64 object-cover object-center rounded-lg"
+                    className="w-72 sm:w-64 h-72 sm:h-64 object-cover object-center rounded-lg"
                     src={project.image}
                     alt={project.title}
                   />
@@ -97,8 +97,8 @@ export default function Projects() {
                     <h2>{project.title}</h2>
                   </div>
                 </div>
-                <div>
-                  <p className="text-lg text-justify mb-4">
+                <div className="mx-5 sm:mx-auto mb-3 sm:mb-auto">
+                  <p className="text-lg text-justify mb-4 ">
                     {project.description}
                   </p>
                   {project.url !== "" && (

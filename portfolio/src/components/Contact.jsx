@@ -41,13 +41,13 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <div className="container mx-auto border w-1/2 rounded-xl my-5 shadow-lg">
+      <div className="container mx-auto border w-full md:w-1/2 rounded-xl my-5 shadow-lg">
         <h1 className="text-4xl font-bold text-center text-indigo-600 p-5 rounded mx-10">
           Contact
         </h1>
         <div className="p-5 rounded  mx-10">
           <form onSubmit={onSubmit} className="max-w-md mx-auto text-black">
-            <div className="grid md:grid-cols-2 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative z-0 w-full mb-5 group">
                 <input
                   type="text"
@@ -80,25 +80,22 @@ export default function Contact() {
                   Last name
                 </label>
               </div>
-            </div>
-            <div className="relative z-0 w-full mb-5 group">
-              <input
-                type="email"
-                name="Email"
-                id="floating_email"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
-                required
-              />
-              <label
-                htmlFor="floating_email"
-                className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-              >
-                Email address
-              </label>
-            </div>
-
-            <div className="grid md:grid-cols-1 md:gap-6">
+              <div className="relative z-0 w-full mb-5 group">
+                <input
+                  type="email"
+                  name="Email"
+                  id="floating_email"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="floating_email"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Email address
+                </label>
+              </div>
               <div className="relative z-0 w-full mb-5 group">
                 <input
                   type="tel"
