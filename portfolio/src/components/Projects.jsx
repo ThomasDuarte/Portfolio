@@ -77,6 +77,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
           {projects.map((project, index) => (
             <div
+              key={index}
               onMouseEnter={() => handleHover(index)}
               onMouseLeave={() => handleHover(index)}
               className=""

@@ -74,8 +74,11 @@ export default function Skills() {
             autoPlaySpeed={2000}
             className="relative"
           >
-            {skills.map((skill) => (
-              <div className="bg-blue-100 p-5 rounded-lg shadow-lg mx-10 h-full">
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className="bg-blue-100 p-5 rounded-lg shadow-lg mx-10 h-full"
+              >
                 <h1 className="text-4xl font-bold text-center text-indigo-600">
                   <img
                     className="w-20 h-20 mx-auto mb-2"
@@ -85,8 +88,8 @@ export default function Skills() {
                   {skill.name}
                 </h1>
                 <ul className="text-lg text-center mt-2 mx-10">
-                  {skill.items.map((item) => (
-                    <li>{item}</li>
+                  {skill.items.map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
               </div>

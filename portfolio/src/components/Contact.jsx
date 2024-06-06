@@ -12,6 +12,33 @@ export default function Contact() {
       messageRef.current.scrollIntoView({ behavior: "smooth" });
     }, 0);
   };
+
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "f0dbda11-4af8-41ab-8cfd-bcce42c00728");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      handleSubmit(event);
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <section id="contact">
       <div className="container mx-auto border w-1/2 rounded-xl my-5 shadow-lg">
@@ -19,12 +46,12 @@ export default function Contact() {
           Contact
         </h1>
         <div className="p-5 rounded  mx-10">
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto text-black">
+          <form onSubmit={onSubmit} className="max-w-md mx-auto text-black">
             <div className="grid md:grid-cols-2 md:gap-6">
               <div className="relative z-0 w-full mb-5 group">
                 <input
                   type="text"
-                  name="floating_first_name"
+                  name="First name"
                   id="floating_first_name"
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -40,7 +67,7 @@ export default function Contact() {
               <div className="relative z-0 w-full mb-5 group">
                 <input
                   type="text"
-                  name="floating_last_name"
+                  name="Last name"
                   id="floating_last_name"
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -57,7 +84,7 @@ export default function Contact() {
             <div className="relative z-0 w-full mb-5 group">
               <input
                 type="email"
-                name="floating_email"
+                name="Email"
                 id="floating_email"
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
@@ -76,7 +103,7 @@ export default function Contact() {
                 <input
                   type="tel"
                   pattern="[0-9]{10}"
-                  name="floating_phone"
+                  name="Phone number"
                   id="floating_phone"
                   className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -99,7 +126,7 @@ export default function Contact() {
               </label>
               <textarea
                 id="floating_message"
-                name="floating_message"
+                name="Message"
                 rows="3"
                 className="block w-full py-2.5 px-4 mt-1 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-0 focus:border-blue-600"
                 placeholder="Hi there!"
