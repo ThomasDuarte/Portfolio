@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
-import ScrollLink from "./ScrollLink";
+import { useEffect, useRef, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import Menu from "./Menu";
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef();
 
   useEffect(() => {
     const onScroll = () => {
@@ -36,6 +38,21 @@ export default function NavBar() {
     { name: "projects", text: "Projects", href: "projects" },
     { name: "contact", text: "Contact", href: "contact" },
   ];
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    if (typeof document !== "undefined") {
+      document.body.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.body.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, []);
+
   return (
     <nav
       className={
@@ -87,30 +104,18 @@ export default function NavBar() {
           }
         />
       </div>
-      <div className="sm:flex sm:space-x-8">
+      <div className="sm:flex sm:space-x-8" ref={menuRef}>
         <button
-          className="sm:hidden"
+          className="sm:hidden align-middle"
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
-          Menu
+          <GiHamburgerMenu
+            className={`h-7 w-7 transition-transform duration-200 ${
+              isMenuOpen ? "rotate-90" : ""
+            }`}
+          />
         </button>
-        <ul
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } sm:flex sm:space-x-8 fixed sm:static w-full sm:w-auto h-auto sm:h-auto pb-2 sm:p-0 bg-white sm:bg-transparent overflow-visible`}
-        >
-          {navLinks.map((link) => (
-            <li
-              key={link.name}
-              className="transform transition-transform duration-500 hover:scale-125 text-lg font-semibold text-black hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
-            >
-              <ScrollLink to={link.href} offset={-60}>
-                {link.text}
-              </ScrollLink>
-              {/* Ajustez l'offset selon la hauteur de votre navbar */}
-            </li>
-          ))}
-        </ul>
+        <Menu isMenuOpen={isMenuOpen} navLinks={navLinks} />
       </div>
     </nav>
   );

@@ -17,6 +17,9 @@ dependencies:
   react-elastic-carousel:
     specifier: ^0.11.5
     version: 0.11.5(prop-types@15.8.1)(react-dom@18.3.1)(react@18.3.1)(styled-components@5.3.11)
+  react-icons:
+    specifier: ^5.2.1
+    version: 5.2.1(react@18.3.1)
   react-multi-carousel:
     specifier: ^2.8.5
     version: 2.8.5
@@ -2501,6 +2504,14 @@ packages:
       react-swipeable: 5.5.1(react@18.3.1)
       resize-observer-polyfill: 1.5.0
       styled-components: 5.3.11(@babel/core@7.24.5)(react-dom@18.3.1)(react-is@16.13.1)(react@18.3.1)
+    dev: false
+
+  /react-icons@5.2.1(react@18.3.1):
+    resolution: {integrity: sha512-zdbW5GstTzXaVKvGSyTaBalt7HSfuK5ovrzlpyiWHAFXndXTdd/1hdDHI4xBM1Mn7YriT6aqESucFl9kEXzrdw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.3.1
     dev: false
 
   /react-is@16.13.1:
