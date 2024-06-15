@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 
 const musicGroups = [
   {
-    title: "Acapella remix",
+    title: "Acapella remixes",
     tracks: [
       "https://api.soundcloud.com/tracks/720763774",
       "https://api.soundcloud.com/tracks/1231461352",
@@ -20,7 +20,7 @@ const musicGroups = [
     ],
   },
   {
-    title: "Other musics",
+    title: "Other music",
     tracks: [
       "https://api.soundcloud.com/tracks/876256264",
       "https://api.soundcloud.com/tracks/770652427",
