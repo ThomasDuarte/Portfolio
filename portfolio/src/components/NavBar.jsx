@@ -36,6 +36,11 @@ export default function NavBar() {
     { name: "home", text: "Home", href: "home" },
     { name: "skills", text: "Skills", href: "skills" },
     { name: "projects", text: "Projects", href: "projects" },
+    {
+      name: "musicProduction",
+      text: "Musics",
+      href: "musicProduction",
+    },
     { name: "contact", text: "Contact", href: "contact" },
   ];
 
