@@ -69,33 +69,40 @@ const responsive = {
   },
 };
 
-const MusicGroupMobile = ({ title, tracks }) => (
-  <div className="bg-blue-100 px-4 pb-4 rounded-lg shadow-lg">
-    <h2 className="text-2xl font-semibold text-center my-4">{title}</h2>
-    <Carousel
-      responsive={responsive}
-      infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={4000}
-      className="relative"
-    >
-      {tracks.map((trackUrl, index) => (
-        <iframe
-          key={index}
-          width="100%"
-          height="300"
-          src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(
-            trackUrl
-          )}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`}
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = "https://w.soundcloud.com/player/?url=";
-          }}
-        ></iframe>
-      ))}
-    </Carousel>
-  </div>
-);
+const MusicGroupMobile = ({ musicGroups }) => {
+  return (
+    <div className="bg-blue-100 px-4 pb-4 rounded-lg shadow-lg">
+      <Carousel
+        responsive={responsive}
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={4000}
+        className="relative"
+      >
+        {musicGroups.flatMap((group, groupIndex) =>
+          group.tracks.map((trackUrl, trackIndex) => (
+            <div key={`${groupIndex}-${trackIndex}`}>
+              <h2 className="text-2xl font-semibold text-center my-4">
+                {group.title}
+              </h2>
+              <iframe
+                width="100%"
+                height="300"
+                src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(
+                  trackUrl
+                )}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://w.soundcloud.com/player/?url=";
+                }}
+              />
+            </div>
+          ))
+        )}
+      </Carousel>
+    </div>
+  );
+};
 
 const MusicProductions = () => {
   const isMobile = window.innerWidth <= 500; // Adjust this value as needed
@@ -107,20 +114,16 @@ const MusicProductions = () => {
           Music productions
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
-          {musicGroups.map((group, index) =>
-            isMobile ? (
-              <MusicGroupMobile
-                key={index}
-                title={group.title}
-                tracks={group.tracks}
-              />
-            ) : (
+          {isMobile ? (
+            <MusicGroupMobile musicGroups={musicGroups} />
+          ) : (
+            musicGroups.map((group, index) => (
               <MusicGroup
                 key={index}
                 title={group.title}
                 tracks={group.tracks}
               />
-            )
+            ))
           )}
         </div>
       </div>
