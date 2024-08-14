@@ -53,11 +53,11 @@ export default function Banner() {
       id="home"
       className=" bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white pt-5 pb-10 sm:py-20 flex flex-col sm:flex-row items-center"
     >
-      <div className="order-1 sm:order-2 relative container mx-auto">
+      <div className="order-1 sm:order-2 relative container mx-auto mb-0 sm:mb-5">
         <img
           src={logo}
           alt="profile"
-          className="w-64 sm:w-80 h-64 sm:h-80 mx-auto rounded-full mb-5"
+          className="w-64 sm:w-80 h-64 sm:h-80 mx-auto rounded-full mb-5 object-cover"
         />
         <div className="hidden sm:flex w-80 h-80 mx-auto rounded-full absolute bottom-0 left-0 right-0 top-0 overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-70 transition duration-300 ease-in-out hover:opacity-0 ">
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-white font-bold animate-blink opacity-100 text-sm sm:text-base md:text-lg lg:text-xl">
@@ -65,7 +65,7 @@ export default function Banner() {
           </div>
         </div>
       </div>
-      <div className="order-2 sm:order-1 container mx-auto">
+      <div className="order-2 sm:order-1 container mx-auto mb-0 sm:mb-10">
         <h1 className="text-4xl font-bold text-center text-indigo-600 bg-white p-5 rounded shadow-lg mx-10 mb-5">
           {t("welcome")}
         </h1>
