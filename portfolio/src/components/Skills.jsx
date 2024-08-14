@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import bddIcon from "../assets/img/bdd.png";
@@ -40,12 +41,12 @@ export default function Skills() {
     },
     {
       icon: bddIcon,
-      name: "Database",
+      name: t("skills_DataBase"),
       items: ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
     },
     {
       icon: toolsIcon,
-      name: "Tools",
+      name: t("skills_Tools"),
       items: ["Git", "GitHub", "VS Code", "Postman", "XrmToolBox"],
     },
     {
@@ -55,7 +56,7 @@ export default function Skills() {
     },
     {
       icon: otherIcon,
-      name: "Others",
+      name: t("skills_Others"),
       items: ["Agile", "Scrum", "Pair-programming", "Testing", "Estimations"],
     },
   ];
@@ -64,7 +65,7 @@ export default function Skills() {
     <section className="pb-5 sm:pb-12 relative" id="skills">
       <div className="container mx-auto bg-[mediumpurple] rounded-3xl pb-5">
         <h1 className="text-4xl font-bold text-center text-white p-5 mx-10 -mt-5 sm:-mt-10">
-          Skills
+          {t("skills_Title")}
         </h1>
         <div className="p-5 rounded-xl shadow-lg mx-10 bg-white">
           <Carousel

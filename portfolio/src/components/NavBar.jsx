@@ -1,8 +1,13 @@
+import { t } from "i18next";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Menu from "./Menu";
 
-export default function NavBar() {
+export default function NavBar({ changeLanguage }) {
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef();
@@ -33,15 +38,15 @@ export default function NavBar() {
     </a>
   );
   const navLinks = [
-    { name: "home", text: "Home", href: "home" },
-    { name: "skills", text: "Skills", href: "skills" },
-    { name: "projects", text: "Projects", href: "projects" },
+    { name: "home", text: t("navBar_Home"), href: "home" },
+    { name: "skills", text: t("navBar_skills"), href: "skills" },
+    { name: "projects", text: t("navBar_projects"), href: "projects" },
     {
       name: "musicProduction",
-      text: "Musics",
+      text: t("navBar_musicProduction"),
       href: "musicProduction",
     },
-    { name: "contact", text: "Contact", href: "contact" },
+    { name: "contact", text: t("navBar_contact"), href: "contact" },
   ];
 
   useEffect(() => {
@@ -121,6 +126,28 @@ export default function NavBar() {
           />
         </button>
         <Menu isMenuOpen={isMenuOpen} navLinks={navLinks} />
+        <div className="flex items-center space-x-4">
+          <button
+            className={`px-4  rounded ${
+              currentLanguage === "en"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-200 text-gray-800"
+            }`}
+            onClick={() => changeLanguage("en")}
+          >
+            En
+          </button>
+          <button
+            className={`px-4 rounded ${
+              currentLanguage === "fr"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-200 text-gray-800"
+            }`}
+            onClick={() => changeLanguage("fr")}
+          >
+            Fr
+          </button>
+        </div>
       </div>
     </nav>
   );

@@ -1,33 +1,7 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-const musicGroups = [
-  {
-    title: "Acapella remixes",
-    tracks: [
-      "https://api.soundcloud.com/tracks/720763774",
-      "https://api.soundcloud.com/tracks/1231461352",
-      "https://api.soundcloud.com/tracks/691734769",
-    ],
-  },
-  {
-    title: "Chill sounds",
-    tracks: [
-      "https://api.soundcloud.com/tracks/794419846",
-      "https://api.soundcloud.com/tracks/684696172",
-      "https://api.soundcloud.com/tracks/684683443",
-    ],
-  },
-  {
-    title: "Other music",
-    tracks: [
-      "https://api.soundcloud.com/tracks/876256264",
-      "https://api.soundcloud.com/tracks/770652427",
-      "https://api.soundcloud.com/tracks/770210422",
-    ],
-  },
-];
 
 const MusicGroup = ({ title, tracks }) => (
   <div className="bg-blue-100 px-4 pb-4 rounded-lg shadow-lg">
@@ -105,13 +79,41 @@ const MusicGroupMobile = ({ musicGroups }) => {
 };
 
 const MusicProductions = () => {
+  const { t } = useTranslation();
+  const musicGroups = [
+    {
+      title: t("musics_Title1"),
+      tracks: [
+        "https://api.soundcloud.com/tracks/720763774",
+        "https://api.soundcloud.com/tracks/1231461352",
+        "https://api.soundcloud.com/tracks/691734769",
+      ],
+    },
+    {
+      title: t("musics_Title2"),
+      tracks: [
+        "https://api.soundcloud.com/tracks/794419846",
+        "https://api.soundcloud.com/tracks/684696172",
+        "https://api.soundcloud.com/tracks/684683443",
+      ],
+    },
+    {
+      title: t("musics_Title3"),
+      tracks: [
+        "https://api.soundcloud.com/tracks/876256264",
+        "https://api.soundcloud.com/tracks/770652427",
+        "https://api.soundcloud.com/tracks/770210422",
+      ],
+    },
+  ];
+
   const isMobile = window.innerWidth <= 500; // Adjust this value as needed
 
   return (
     <section className="relative" id="musicProduction">
       <div className="mt-5 sm:mt-10 bg-[mediumpurple] rounded-3xl pb-5">
         <h1 className="text-4xl font-bold text-center text-white p-5 mx-10">
-          Music productions
+          {t("musics_Title")}
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
           {isMobile ? (

@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import { useRef, useState } from "react";
 
 export default function Contact() {
@@ -61,7 +62,7 @@ export default function Contact() {
                   htmlFor="floating_first_name"
                   className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  First name
+                  {t("contact_FirstName")}
                 </label>
               </div>
               <div className="relative z-0 w-full mb-5 group">
@@ -77,7 +78,7 @@ export default function Contact() {
                   htmlFor="floating_last_name"
                   className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  Last name
+                  {t("contact_LastName")}
                 </label>
               </div>
               <div className="relative z-0 w-full mb-5 group">
@@ -93,7 +94,7 @@ export default function Contact() {
                   htmlFor="floating_email"
                   className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  Email address
+                  {t("contact_Email")}
                 </label>
               </div>
               <div className="relative z-0 w-full mb-5 group">
@@ -110,7 +111,7 @@ export default function Contact() {
                   htmlFor="floating_phone"
                   className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  Phone number (0612345678)
+                  {t("contact_Phone")}
                 </label>
               </div>
             </div>
@@ -119,14 +120,14 @@ export default function Contact() {
                 htmlFor="floating_message"
                 className="block text-sm font-medium text-gray-700"
               >
-                Message
+                {t("contact_Message")}
               </label>
               <textarea
                 id="floating_message"
                 name="Message"
                 rows="3"
                 className="block w-full py-2.5 px-4 mt-1 text-sm text-gray-900 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-0 focus:border-blue-600"
-                placeholder="Hi there!"
+                placeholder={t("contact_Message_Placeholder")}
                 required
               ></textarea>
             </div>
@@ -135,7 +136,7 @@ export default function Contact() {
                 type="submit"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
               >
-                Submit
+                {t("contact_Submit")}
               </button>
             </div>
           </form>
