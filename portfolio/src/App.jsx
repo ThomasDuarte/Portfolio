@@ -15,6 +15,7 @@ function App() {
     i18n.changeLanguage(lng);
   };
   return (
+    // Wrap the components with the LanguageProvider for translation
     <LanguageProvider>
       <div className="App">
         <NavBar changeLanguage={changeLanguage} />
