@@ -1,7 +1,7 @@
 // Menu.jsx
 import { Link as ScrollLink } from "react-scroll";
 
-function Menu({ isMenuOpen, navLinks }) {
+function Menu({ isMenuOpen, navLinks, changeLanguage, currentLanguage }) {
   return (
     <ul
       className={`${
@@ -20,6 +20,29 @@ function Menu({ isMenuOpen, navLinks }) {
           </ScrollLink>
         </li>
       ))}
+      <li className="flex items-center justify-center pt-3 sm:pt-0 space-x-4">
+        <button
+          className={`px-4 rounded ${
+            currentLanguage === "en"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-800"
+          }`}
+          onClick={() => changeLanguage("en")}
+        >
+          En
+        </button>
+
+        <button
+          className={`px-4 rounded ${
+            currentLanguage === "fr"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-800"
+          }`}
+          onClick={() => changeLanguage("fr")}
+        >
+          Fr
+        </button>
+      </li>
     </ul>
   );
 }

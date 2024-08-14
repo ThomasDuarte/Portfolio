@@ -125,29 +125,12 @@ export default function NavBar({ changeLanguage }) {
             }`}
           />
         </button>
-        <Menu isMenuOpen={isMenuOpen} navLinks={navLinks} />
-        <div className="flex items-center space-x-4">
-          <button
-            className={`px-4  rounded ${
-              currentLanguage === "en"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-800"
-            }`}
-            onClick={() => changeLanguage("en")}
-          >
-            En
-          </button>
-          <button
-            className={`px-4 rounded ${
-              currentLanguage === "fr"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-800"
-            }`}
-            onClick={() => changeLanguage("fr")}
-          >
-            Fr
-          </button>
-        </div>
+        <Menu
+          isMenuOpen={isMenuOpen}
+          navLinks={navLinks}
+          changeLanguage={changeLanguage}
+          currentLanguage={currentLanguage}
+        />
       </div>
     </nav>
   );
