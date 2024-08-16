@@ -1,10 +1,10 @@
 import { t } from "i18next";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import backendIcon from "../assets/img/backend.png";
 import bddIcon from "../assets/img/bdd.png";
 import crmIcon from "../assets/img/crm.png";
 import htmlIcon from "../assets/img/html.png";
-import jsIcon from "../assets/img/js.png";
 import otherIcon from "../assets/img/other.png";
 import toolsIcon from "../assets/img/tools.png";
 
@@ -35,9 +35,9 @@ export default function Skills() {
       items: ["HTML", "CSS", "JavaScript", "React"],
     },
     {
-      icon: jsIcon,
+      icon: backendIcon,
       name: "Backend",
-      items: ["JavaScipt", "C#", "Java", "Node"],
+      items: ["Node.js", "C#", "Java"],
     },
     {
       icon: bddIcon,
